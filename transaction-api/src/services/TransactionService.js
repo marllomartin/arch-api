@@ -5,8 +5,8 @@ const create = async (type, value, approved, userId) => {
     type,
     value,
     approved,
-    date: new Date(),
-    userId
+    userId,
+    date: new Date()
   }
 
   await Transaction.create(newTransaction);

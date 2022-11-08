@@ -4,8 +4,8 @@ const Transaction = mongoose.model('Transaction', {
   type: String,
   value: Number,
   approved: Boolean,
-  date: Date,
   userId: String,
+  date: Date,
 })
 
 module.exports = Transaction;
