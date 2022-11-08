@@ -2,11 +2,11 @@ const Transaction = require('../database/models/Transaction');
 
 const getUserBalance = async (id) => {
   const balance = await Transaction.aggregate([
-    { $match: { $and: [{ "userId": id }, { "approved": true }] } },
-    { $group: { _id: id, balance: { $sum: "$value" } } }
-  ])
+    { $match: { $and: [{ userId: id }, { approved: true }] } },
+    { $group: { _id: id, balance: { $sum: '$value' } } },
+  ]);
 
-  return balance
-}
+  return balance;
+};
 
 module.exports = { getUserBalance };

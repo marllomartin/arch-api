@@ -6,6 +6,6 @@ const Transaction = mongoose.model('Transaction', {
   approved: Boolean,
   userId: String,
   date: Date,
-})
+});
 
 module.exports = Transaction;

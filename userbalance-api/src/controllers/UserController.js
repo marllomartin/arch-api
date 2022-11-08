@@ -13,13 +13,13 @@ const getUserBalance = async (req, res) => {
 
       await setCache(`user-${id}-balance`, result.balance);
 
-      return res.status(StatusCodes.OK).send(result)
+      return res.status(StatusCodes.OK).send(result);
     } catch (err) {
-      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send({ message: err.message })
+      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send({ message: err.message });
     }
   }
 
-  return res.status(StatusCodes.OK).send({ 'balance': parseFloat(balanceCache) })
-}
+  return res.status(StatusCodes.OK).send({ balance: parseFloat(balanceCache) });
+};
 
 module.exports = { getUserBalance };

@@ -6,17 +6,17 @@ const create = async (type, value, approved, userId) => {
     value,
     approved,
     userId,
-    date: new Date()
-  }
+    date: new Date(),
+  };
 
   await Transaction.create(newTransaction);
-}
+};
 
 const getUserTransactions = async (userId) => {
   const transactions = await Transaction.find({ userId })
     .select('-__v');
 
   return transactions;
-}
+};
 
 module.exports = { create, getUserTransactions };
