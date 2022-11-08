@@ -5,7 +5,6 @@ O repositório conta com dois microsserviços em formato de APIs para registro d
 
 ## Tecnologias Utilizadas
 * [MongoDB](https://www.mongodb.com/)
-* [Redis](https://redis.io/)
 * [Node.js](https://nodejs.org/en/)
   * [Express](https://expressjs.com/pt-br/)
   * [HTTP-Status-Codes](https://www.npmjs.com/package/http-status-codes)
