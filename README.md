@@ -54,6 +54,12 @@ Exemplo de Body:
 | `approved` | Informa se a transação foi aprovada ou não. | Boolean |
 | `userId` | O id do usuário que realizou a transação | String |
 
+<br>
+
+Exemplo no Insomnia:
+
+![Transaction](https://github.com/marllomartin/arch-api/blob/main/public/images/transaction.jpg)
+
 
 ## API de Saldo (userbalance-api)
 
@@ -72,3 +78,9 @@ npm start
 Tipo de Requisição: **GET**
 
 URL: **http://localhost:3000/{userId}**
+
+<br>
+
+Exemplo no Insomnia:
+
+![Balance](https://github.com/marllomartin/arch-api/blob/main/public/images/balance.jpg)
