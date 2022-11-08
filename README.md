@@ -5,31 +5,26 @@ O repositório conta com dois microsserviços em formato de APIs para registro d
 
 ## Tecnologias Utilizadas
 * [MongoDB](https://www.mongodb.com/)
+* [Docker](https://www.docker.com/)
 * [Node.js](https://nodejs.org/en/)
   * [Express](https://expressjs.com/pt-br/)
   * [HTTP-Status-Codes](https://www.npmjs.com/package/http-status-codes)
   * [Node-Cache](https://www.npmjs.com/package/node-cache)
 
-## Variáveis de Ambiente
+## Rodando as APIs com o Docker
 
-Para rodar as APIs, você vai precisar renomear o arquivo `.env.example` localizado na raíz de cada API para `.env` e adicionar as seguintes variáveis de ambiente:
+### Clonando o projeto
+```
+git clone git@github.com:marllomartin/arch-api.git
 
-`DB_USER = arch`
+cd arch-api
+```
+### Inicializando o Docker
+```
+docker-compose up --build
+```
 
-`DB_PASSWORD = Os3b2CNjzfkM9Kff`
- 
 ## API de Transações (transactions-api)
-
-### Instalando as dependências
-
-```
-npm install
-```
-
-### Rodando a API
-```
-npm start
-```
 
 ### Executando transações
 
@@ -61,16 +56,6 @@ Exemplo no Insomnia:
 
 
 ## API de Saldo (userbalance-api)
-
-### Instalando as dependências
-```
-npm install
-```
-
-### Rodando a API
-```
-npm start
-```
 
 ### Checagem de saldo
 
