@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  userbalance:
+    container_name: userbalance
+    build: ./userbalance-api
+    ports:
+      - 3000:3000
+    platform: linux/x86_64
+    working_dir: /userbalance-api
+    environment:
+      - DB_USER=arch
+      - DB_PASSWORD=Os3b2CNjzfkM9Kff
+    healthcheck:
+      test: [ "CMD", "lsof", "-t", "-i:3000" ]
+      timeout: 10s
+      retries: 5
+
+  transaction:
+    container_name: transaction
+    build: ./transaction-api
+    ports:
+      - 3001:3001
+    platform: linux/x86_64
+    working_dir: /transaction-api
+    environment:
+      - DB_USER=arch
+      - DB_PASSWORD=Os3b2CNjzfkM9Kff
+    healthcheck:
+      test: [ "CMD", "lsof", "-t", "-i:3001" ]
+      timeout: 10s
+      retries: 5
