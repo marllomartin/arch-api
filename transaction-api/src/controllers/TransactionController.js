@@ -7,7 +7,7 @@ const create = async (req, res) => {
     try {
         await TransactionService.create(type, value, approved, userId);
 
-        return res.status(StatusCodes.CREATED).send({ message: 'Transação efetuada com sucesso.' });
+        return res.status(StatusCodes.CREATED).send({ message: 'Transação registrada.' });
     } catch (err) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send({ message: err.message });
     }
