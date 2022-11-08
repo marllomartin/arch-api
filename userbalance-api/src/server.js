@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const UserController = require('./controllers/UserController')
 const { create, getUserBalance } = UserController;
 
-const port = 3001;
+const port = 3000;
 
 const DB_USER = "arch";
 const DB_PASSWORD = "Os3b2CNjzfkM9Kff";

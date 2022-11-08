@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const TransactionController = require('./controllers/TransactionController')
 const { create, getUserTransactions } = TransactionController;
 
-const port = 3000;
+const port = 3001;
 
 const DB_USER = "arch";
 const DB_PASSWORD = "Os3b2CNjzfkM9Kff";
