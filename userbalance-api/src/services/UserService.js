@@ -1,20 +1,12 @@
-const User = require('../database/models/User');
-
-const create = async (name) => {
-    const newUser = {
-        name,
-        balance: 0
-    }
-
-    await User.create(newUser);
-}
+const Transaction = require('../database/models/Transaction');
 
 const getUserBalance = async (id) => {
-    const balance = await User
-        .findById(id, { name: 0, _id: 0 })
-        .select('-__v');
+  const balance = await Transaction.aggregate([
+    { $match: { $and: [{ "userId": id }, { "approved": true }] } },
+    { $group: { _id: id, balance: { $sum: "$value" } } }
+  ])
 
-    return balance
+  return balance
 }
 
-module.exports = { create, getUserBalance };
+module.exports = { getUserBalance };
