@@ -5,7 +5,8 @@ const mongoose = require('mongoose');
 const UserController = require('./controllers/UserController');
 const { getUserBalance } = UserController;
 
-const { DB_USER, DB_PASSWORD, PORT } = process.env;
+const PORT = 3000;
+const { DB_USER, DB_PASSWORD } = process.env;
 
 mongoose.connect(
     `mongodb+srv://${DB_USER}:${DB_PASSWORD}@archcluster.bkue2h8.mongodb.net/database?retryWrites=true&w=majority`
@@ -18,4 +19,4 @@ mongoose.connect(
     })
     .catch((err) => console.log(err));
 
-app.get('/:id', getUserBalance);
+app.get('/balance/:id', getUserBalance);
