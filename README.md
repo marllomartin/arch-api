@@ -61,7 +61,7 @@ Exemplo no Insomnia:
 
 Tipo de Requisição: **GET**
 
-URL: **http://localhost:3000/{userId}**
+URL: **http://localhost:3000/balance/{userId}**
 
 <br>
 
