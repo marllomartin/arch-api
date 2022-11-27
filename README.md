@@ -1,9 +1,9 @@
 # Arch APIs
 
-## Sobre
-O repositório conta com dois microsserviços em formato de APIs para registro de transações e checagem de saldo.
+## About
+This repository contains two API format microservices for transaction registering and balance check.
 
-## Tecnologias Utilizadas
+## Technologies Used
 * [MongoDB](https://www.mongodb.com/)
 * [Docker](https://www.docker.com/)
 * [Node.js](https://nodejs.org/en/)
@@ -11,28 +11,28 @@ O repositório conta com dois microsserviços em formato de APIs para registro d
   * [HTTP-Status-Codes](https://www.npmjs.com/package/http-status-codes)
   * [Node-Cache](https://www.npmjs.com/package/node-cache)
 
-## Rodando as APIs com o Docker
+## Running the services inside a Docker container
 
-### Clonando o projeto
+### Cloning the repository
 ```
 git clone git@github.com:marllomartin/arch-api.git
 
 cd arch-api
 ```
-### Inicializando o Docker
+### Starting Docker
 ```
 docker-compose up --build
 ```
 
-## API de Transações (transactions-api)
+## Transactions API (transactions-api)
 
-### Executando transações
+### Running Transactions
 
-Tipo de Requisição: **POST**
+Requisition Type: **POST**
 
 URL: **http://localhost:3001/transaction**
 
-Exemplo de Body:
+Body Example:
 ```
 {
   "type": "credit",
@@ -41,30 +41,34 @@ Exemplo de Body:
   "userId": "test",
 }
 ```
-| Parâmetro   | Descrição                                   | Tipo |
+| Name   | Description                                   | Type |
 | :---------- | :---------------------------------- | :------- |
-| `type` |  O tipo de transação (credit, debit...). | String |
-| `value` |  O valor que será depositado ou subtraído. | Number |
-| `approved` | Informa se a transação foi aprovada ou não. | Boolean |
-| `userId` | O id do usuário que realizou a transação | String |
+| `type` |  The transaction type (credit, debit...). | String |
+| `value` |  The transaction value. | Number |
+| `approved` | Informs if the transaction was approved or not. | Boolean |
+| `userId` | The ID of the user requesting the transaction. | String |
 
 <br>
 
-Exemplo no Insomnia:
+Insomnia Example:
 
 ![Transaction](https://github.com/marllomartin/arch-api/blob/main/public/images/transaction.jpg)
 
 
-## API de Saldo (userbalance-api)
+## Balance API (userbalance-api)
 
-### Checagem de saldo
+### Checking Balance
 
-Tipo de Requisição: **GET**
+Requisition Type: **GET**
 
 URL: **http://localhost:3000/balance/{userId}**
 
+| Parameter   | Description                                   | Type |
+| :---------- | :---------------------------------- | :------- |
+| `userId` |  The ID of the user requesting a balance check. | String |
+
 <br>
 
-Exemplo no Insomnia:
+Insomnia Example:
 
 ![Balance](https://github.com/marllomartin/arch-api/blob/main/public/images/balance.jpg)
